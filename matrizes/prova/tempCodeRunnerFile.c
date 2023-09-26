@@ -6,6 +6,7 @@ int calcular_aposta(int largura, int altura, int numInicial, int bandeira[altura
     int sum = 0;
 
     for (i=0; i<altura;i++){
+        printf("\n");
         for (j=0;j<largura;j++){
             if(j < largura/3){
                 bandeira[i][j] = numInicial + 1;
@@ -26,8 +27,10 @@ int calcular_aposta(int largura, int altura, int numInicial, int bandeira[altura
                     sum += bandeira[i][j];
                 }
             }
+            printf("%d", bandeira[i][j]);
         }
     }
+    printf("\n");
     return sum;
     
 }
@@ -40,7 +43,7 @@ int main (){
 
     scanf("%d %d %c", &largura, &numInicial, &cor);
     altura = 2*(largura/3);
-
+    
     int bandeira[altura][largura];
     int somaTotal = (calcular_aposta(largura, altura, numInicial, bandeira, cor));
 
