@@ -24,9 +24,6 @@ void flatten(int l, int c, int m[l][c], int vetor[], int ordem){
             }
         }
     }
-
-    
-    
 }
 
 int main (){
