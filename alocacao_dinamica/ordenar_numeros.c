@@ -24,10 +24,7 @@ int main() {
     while (1) {
         int inputNumero;
         char espaco;
-        if (scanf("%d%c", &inputNumero, &espaco) != 2 || espaco == '\n') {
-            int *tempArray = (int *)realloc(arrayNumeros, (contadorEspacos + 1) * sizeof(int));
-            arrayNumeros = tempArray;
-            arrayNumeros[contadorEspacos++] = inputNumero;
+        if (scanf("%d%c ", &inputNumero, &espaco) < 1) {
             break;
         }
 
@@ -41,9 +38,11 @@ int main() {
         arrayNumeros = tempArray;
         arrayNumeros[contadorEspacos++] = inputNumero;
     }
-
+    if (contadorEspacos == 1){
+            printf("%d", arrayNumeros[0]);
+            return 0;
+        }
     ordenarNumeros(arrayNumeros, contadorEspacos);
-
     for (int i = 0; i < contadorEspacos; i++) {
         printf("%d ", arrayNumeros[i]);
     }
